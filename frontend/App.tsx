@@ -1,21 +1,22 @@
 import React, { Alert } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text } from "react-native";
 
 import Avatar from "./src/components/common/Avatar";
 import Button from "./src/components/common/Button";
 import Card from "./src/components/common/Card";
+import Header from "./src/components/common/Header";
 import { colors } from "./src/theme/colors";
 import { spacing } from "./src/theme/spacing";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Welcome to Peppi 🐻</Text>
+      <Header
+        title="Self Exploring"
+        subtitle="Take a moment to understand yourself."
+      />
 
-      <View style={styles.avatarSection}>
-        <Avatar size={80} />
-        <Text style={styles.avatarText}>Your Profile</Text>
-      </View>
+      <Avatar size={80} />
 
       <Card>
         <Text style={styles.cardTitle}>Your Journey</Text>
@@ -36,28 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
-    justifyContent: "center",
     padding: spacing.lg,
-  },
-
-  title: {
-    fontSize: 28,
-    fontWeight: "700",
-    color: colors.text,
-    textAlign: "center",
-    marginBottom: spacing.lg,
-  },
-
-  avatarSection: {
-    alignItems: "center",
-    marginBottom: spacing.lg,
-  },
-
-  avatarText: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: colors.text,
-    marginTop: spacing.sm,
   },
 
   cardTitle: {
