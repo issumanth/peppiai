@@ -1,6 +1,7 @@
-import React from "react";
-import { Alert, SafeAreaView, StyleSheet, Text } from "react-native";
+import React, { Alert } from "react";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
+import Avatar from "./src/components/common/Avatar";
 import Button from "./src/components/common/Button";
 import Card from "./src/components/common/Card";
 import { colors } from "./src/theme/colors";
@@ -10,6 +11,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Welcome to Peppi 🐻</Text>
+
+      <View style={styles.avatarSection}>
+        <Avatar size={80} />
+        <Text style={styles.avatarText}>Your Profile</Text>
+      </View>
 
       <Card>
         <Text style={styles.cardTitle}>Your Journey</Text>
@@ -40,6 +46,18 @@ const styles = StyleSheet.create({
     color: colors.text,
     textAlign: "center",
     marginBottom: spacing.lg,
+  },
+
+  avatarSection: {
+    alignItems: "center",
+    marginBottom: spacing.lg,
+  },
+
+  avatarText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: colors.text,
+    marginTop: spacing.sm,
   },
 
   cardTitle: {
